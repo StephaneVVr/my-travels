@@ -1,12 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import Travel from './travel';
 
+const travelOne = {
+    destination: 'Quelque part',
+    country: 'Dans le monde',
+    image: 'https://www.acs-ami.com/fr/blog/wp-content/uploads/2015/07/inspiration-voyage.jpg',
+    distance: 'Loin'
+};
+
+const travelTwo = {
+    destination: 'Banane',
+    country: 'Courgette',
+    image: 'http://www.unmonde.fr/wp-content/uploads/2014/05/Fotolia_43783967_Subscription_S.jpg',
+    distance: '45 000km'
+};
+
+const App = () => <div>
+    <Travel {...travelOne} /> 
+    <Travel {...travelTwo} />
+</div>
+    
 ReactDOM.render(<App />, document.getElementById('root'));
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+    
